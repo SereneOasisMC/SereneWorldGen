@@ -5,6 +5,7 @@ import com.sonorous.level.world.KingdomUtils;
 import com.sonorous.level.world.biome.BiomeLayers;
 import com.sonorous.level.world.biome.BiomeRepresentation;
 import com.sonorous.level.world.biome.biomes.BiomeCategories;
+import com.sonorous.level.world.chunk.ChunkUtils;
 import com.sonorous.libs.FastNoiseLite;
 import org.bukkit.Material;
 import org.bukkit.block.Biome;
@@ -19,8 +20,13 @@ public class NoiseMaster {
             new GenerationNoise(FastNoiseLite.NoiseType.OpenSimplex2, 0.01f, NoiseCategories.TERRAIN).
                     attachFractal(FastNoiseLite.FractalType.FBm, 4, 1.3f, 0.3f, -0.5f);
 
-            new GenerationNoise(FastNoiseLite.NoiseType.OpenSimplex2, 0.0001f, NoiseCategories.CONTINENTALNESS).
-                    attachFractal(FastNoiseLite.FractalType.FBm, 3, 0, 0, 0);
+        new GenerationNoise(FastNoiseLite.NoiseType.OpenSimplex2, 0.001f, NoiseCategories.EROSION)
+                .attachFractal(FastNoiseLite.FractalType.Ridged, 4, 2.0f, 0.5f, 0);
+
+
+
+            new GenerationNoise(FastNoiseLite.NoiseType.OpenSimplex2S, 0.0001f, NoiseCategories.CONTINENTALNESS).
+                    attachFractal(FastNoiseLite.FractalType.FBm, 3, 0.5f, 2.0f, 0);
 
             new GenerationNoise(FastNoiseLite.NoiseType.OpenSimplex2, 0.0002f, NoiseCategories.TEMPERATURE).
                     attachFractal(FastNoiseLite.FractalType.FBm, 3, 0.5f, 0.3f, 3f);
@@ -34,8 +40,8 @@ public class NoiseMaster {
             new GenerationNoise(FastNoiseLite.NoiseType.OpenSimplex2, 0.0001f, NoiseCategories.WEIRDNESS).
                     attachFractal(FastNoiseLite.FractalType.FBm, 3, 0.5f, 0.3f, 3.0f);
 
-            new GenerationNoise(FastNoiseLite.NoiseType.OpenSimplex2, 0.001f, NoiseCategories.RIVER).
-                attachFractal(FastNoiseLite.FractalType.PingPong, 3, 10, 0.5f, 0).
+            new GenerationNoise(FastNoiseLite.NoiseType.ValueCubic, 0.001f, NoiseCategories.RIVER).
+                attachFractal(FastNoiseLite.FractalType.PingPong, 1, 0,0, 0).
                  attachPingPong(1.0f);
 
             new GenerationNoise(FastNoiseLite.NoiseType.OpenSimplex2, 0.0025F, NoiseCategories.CAVES).
@@ -75,47 +81,49 @@ public class NoiseMaster {
 
     }
 
-    public static BiomeCategories getCategory(int x, int z, boolean ocean){
-        BiomeCategories category = null;
-        double targetContinentalness = GenerationNoise.getNoise(NoiseCategories.CONTINENTALNESS, x, z) ;
+    public static BiomeCategories getCategory(int x, int z) {
+        double targetContinentalness = GenerationNoise.getNoise(NoiseCategories.CONTINENTALNESS, x, z);
 
-
-        if (!KingdomUtils.isInsideKingdomInclWalls(x, z) && GenerationNoise.getNoise(NoiseCategories.RIVER, x ,z ) > 0.95 && targetContinentalness >= -0.1 && targetContinentalness < 0.3 ) {
-            category = BiomeCategories.RIVER;
-        } else {
-
-            if (targetContinentalness <= -0.2 && ocean) { // offland
-                category = BiomeCategories.OFF;
-            } else if (targetContinentalness <= -0.1) { // coastal
-                category = BiomeCategories.COASTAL;
-            } else if (targetContinentalness > -0.1 && targetContinentalness <= 0.15) { // flatland
-                category = BiomeCategories.FLAT;
-            } else if (targetContinentalness > 0.15 && targetContinentalness <= 0.25) { // wet
-                category = BiomeCategories.WET;
-            } else if (targetContinentalness > 0.25 && targetContinentalness <= 0.35) { // woodland
-                category = BiomeCategories.WOOD;
-
-            } else if (targetContinentalness > 0.35 && targetContinentalness <= 0.5) { // aridland
-                category = BiomeCategories.ARID;
-
-            } else { // highland
-                category = BiomeCategories.HIGH;
-
+        // 1. Check for Rivers first if you want them to cut through multiple biomes
+        // (Adjust the threshold or add a continentalness cap if you don't want rivers in high mountains)
+        if (GenerationNoise.getNoise(NoiseCategories.RIVER, x, z) > ChunkUtils.RIVER_THRESHOLD) {
+            if (targetContinentalness <= ChunkUtils.NOISE_BOUND_FLATLAND) {
+                return BiomeCategories.RIVER;
             }
         }
-        return category;
 
+        // 2. Step-ladder check from lowest noise to highest noise
+        if (targetContinentalness <= ChunkUtils.NOISE_BOUND_OFFLAND) { // <= -0.2
+            return BiomeCategories.OFF;
+        }
+        else if (targetContinentalness <= ChunkUtils.NOISE_BOUND_COASTAL) { // -0.2 to -0.1
+            return BiomeCategories.COASTAL;
+        }
+        else if (targetContinentalness <= ChunkUtils.NOISE_BOUND_FLATLAND) { // -0.1 to 0.15
+            return BiomeCategories.FLAT;
+        }
+        else if (targetContinentalness <= ChunkUtils.NOISE_BOUND_WETLAND) { // 0.15 to 0.25
+            return BiomeCategories.WET;
+        }
+        else if (targetContinentalness <= ChunkUtils.NOISE_BOUND_WOODLAND) { // 0.25 to 0.35
+            return BiomeCategories.WOOD;
+        }
+        else if (targetContinentalness <= ChunkUtils.NOISE_BOUND_ARID) { // 0.35 to 0.45
+            return BiomeCategories.ARID;
+        }
+        else { // > 0.45
+            return BiomeCategories.HIGH;
+        }
     }
 
     /***
      * Calculates which biome representation represents a specified location
      * @param x the X of the Location we want to obtain the biome representation for
      * @param z the Z of the Location we want to obtain the biome representation for
-     * @param ocean whether under the sea level
      * @return A best fitting biome representation
      */
-    private static BiomeRepresentation getBiomeRepresentation(int x, int z, boolean ocean){
-        double targetTemeprature = GenerationNoise.getNoise(NoiseCategories.TEMPERATURE, x, z) ;
+    private static BiomeRepresentation getBiomeRepresentation(int x, int z){
+        double targetTemperature = GenerationNoise.getNoise(NoiseCategories.TEMPERATURE, x, z) ;
         double targetHumidity = GenerationNoise.getNoise(NoiseCategories.HUMIDITY, x, z) ;
         double weirdness = GenerationNoise.getNoise(NoiseCategories.WEIRDNESS, x ,z) ;
 
@@ -123,12 +131,12 @@ public class NoiseMaster {
         // Below uses an algorithm to select which Biome out of the already chosen category is most appropriate.
         // There is a score given based on the difference between ideal characteristics which is meant to be minimised.
         // Weirdness is also taken into account to minimise the amount of more unusual biomes
-        return BiomeRepresentation.getBiomeRepresentations(getCategory(x, z, ocean))
+        return BiomeRepresentation.getBiomeRepresentations(getCategory(x, z))
                 .stream()
                 .map(biomeRepresentation -> {
                     return Pair.of(biomeRepresentation,
                              (Math.abs(biomeRepresentation.getHumidity() - targetHumidity) )
-                            + (Math.abs(biomeRepresentation.getTemperature() - targetTemeprature) )
+                            + (Math.abs(biomeRepresentation.getTemperature() - targetTemperature) )
                             + (Math.abs(weirdness * (biomeRepresentation.getWeirdness() -  weirdness) )));
                 })
                 .reduce((biomeRepresentationDoublePair, biomeRepresentationDoublePair2) -> {
@@ -144,22 +152,20 @@ public class NoiseMaster {
      * Calculates which biome represents a specified location
      * @param x the X of the Location we want to obtain the biome for
      * @param z the Z of the Location we want to obtain the biome for
-     * @param ocean whether under the sea level
      * @return A best fitting biome
      */
-    public static Biome getBiome(int x, int z, boolean ocean){
-       return getBiomeRepresentation(x, z, ocean).getBiome();
+    public static Biome getBiome(int x, int z){
+       return getBiomeRepresentation(x, z).getBiome();
     }
 
     /***
      * Calculates what the layers of the terrain at a given location should be
      * @param x the X of the Location we want to obtain the Biome for
      * @param z the Z of the Location we want to obtain the Biome for
-     * @param ocean whether under the sea level
      * @return A best fitting Biome
      */
-    public static HashMap<BiomeLayers, List<Material>> getBiomeLayers(int x, int z, boolean ocean){
-        return getBiomeRepresentation(x, z, ocean).getLayers();
+    public static HashMap<BiomeLayers, List<Material>> getBiomeLayers(int x, int z){
+        return getBiomeRepresentation(x, z).getLayers();
     }
 
     /***

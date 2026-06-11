@@ -18,10 +18,8 @@ public class CustomBiomeProvider extends BiomeProvider {
     @Override
     public Biome getBiome(@NotNull WorldInfo worldInfo, int x, int y, int z) {
 
-        float currentY = ChunkUtils.getCurrentY(x, z);
 
-        boolean ocean = currentY <= ChunkUtils.SEA_LEVEL;
-        return NoiseMaster.getBiome(x, z, ocean);
+        return NoiseMaster.getBiome(x, z);
     }
 
     @NotNull

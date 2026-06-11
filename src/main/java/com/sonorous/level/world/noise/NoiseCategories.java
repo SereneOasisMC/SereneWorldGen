@@ -5,6 +5,7 @@ package com.sonorous.level.world.noise;
  */
 public enum NoiseCategories {
 
+    EROSION,
     TERRAIN,
     CONTINENTALNESS,
     TEMPERATURE,

@@ -1,126 +1,135 @@
-[04:15:55] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.2+10-LTS; Amazon.com Inc. Corretto-25.0.2.10.1) on Linux 6.1.0-44-amd64 (amd64)
-[04:15:55] [ServerMain/INFO]: [bootstrap] Loading Paper 26.1.2-69-main@76d2ac7 (2026-06-03T17:32:02Z) for Minecraft 26.1.2
-[04:15:55] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[04:15:55] [ServerMain/INFO]: [PluginInitializerManager] Initialized 6 plugins
-[04:15:55] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (6):
+[18:16:40] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.2+10-LTS; Amazon.com Inc. Corretto-25.0.2.10.1) on Linux 6.1.0-44-amd64 (amd64)
+[18:16:40] [ServerMain/INFO]: [bootstrap] Loading Paper 26.1.2-69-main@76d2ac7 (2026-06-03T17:32:02Z) for Minecraft 26.1.2
+[18:16:40] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[18:16:40] [ServerMain/INFO]: [PluginInitializerManager] Initialized 6 plugins
+[18:16:40] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (6):
  - Chunky (1.5.3), NDatabase (1.5.4), SonorousWorldGen (1.0.0), WorldEdit (7.4.3-beta-01+80c6d6122), WorldGuard (7.0.17+2370-e42d8bc), squaremap (1.3.13)
-[04:15:58] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[04:15:59] [ServerMain/INFO]: Loaded 1515 recipes
-[04:15:59] [ServerMain/INFO]: Loaded 1617 advancements
-[04:15:59] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[04:15:59] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 214.5ms
-[04:15:59] [Server thread/INFO]: Starting minecraft server version 26.1.2
-[04:15:59] [Server thread/INFO]: Loading properties
-[04:15:59] [Server thread/INFO]: This server is running Paper version 26.1.2-69-main@76d2ac7 (2026-06-03T17:32:02Z) (Implementing API version 26.1.2.build.69-stable)
-[04:15:59] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[04:15:59] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[04:15:59] [Server thread/INFO]: Using 4 threads for Netty based IO
-[04:16:00] [Server thread/INFO]: [MoonriseCommon] Paper is using 4 worker threads, 1 I/O threads
-[04:16:00] [Server thread/INFO]: Default game type: SURVIVAL
-[04:16:00] [Server thread/INFO]: Generating keypair
-[04:16:00] [Server thread/INFO]: Starting Minecraft server on *:25565
-[04:16:00] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[04:16:00] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
-[04:16:00] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.4.3-beta-01+80c6d6122
-[04:16:00] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@4e46b5d4]
-[04:16:00] [Server thread/INFO]: [squaremap] Loading server plugin squaremap v1.3.13
-[04:16:00] [Server thread/INFO]: [SonorousWorldGen] Loading server plugin SonorousWorldGen v1.0.0
-[04:16:00] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.17+2370-e42d8bc
-[04:16:00] [Server thread/INFO]: [Chunky] Loading server plugin Chunky v1.5.3
-[04:16:00] [Server thread/INFO]: [NDatabase] Loading server plugin NDatabase v1.5.4
-[04:16:00] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[04:16:00] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.4.3-beta-01+80c6d6122
-[04:16:00] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[04:16:00] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[04:16:01] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v26_1.PaperweightAdapter as the Bukkit adapter
-[04:16:01] [Server thread/INFO]: [squaremap] Enabling squaremap v1.3.13
-[04:16:01] [Server thread/INFO]: [io.undertow] starting server: Undertow - 2.3.24.Final
-[04:16:01] [Server thread/INFO]: [org.xnio] XNIO version 3.8.16.Final
-[04:16:01] [Server thread/INFO]: [org.xnio.nio] XNIO NIO Implementation Version 3.8.16.Final
-[04:16:01] [Server thread/INFO]: [org.jboss.threads] JBoss Threads version 3.7.0.Final
-[04:16:01] [Server thread/INFO]: [squaremap] Internal webserver running on 0.0.0.0:8080
-[04:16:01] [Server thread/INFO]: [SonorousWorldGen] Enabling SonorousWorldGen v1.0.0
-[04:16:01] [Server thread/INFO]: [SonorousWorldGen] WorldGenerator was enabled successfully.
-[04:16:01] [Server thread/INFO]: Preparing level "world"
-[04:16:01] [Server thread/INFO]: [org.reflections.Reflections] Reflections took 33 ms to scan 1 urls, producing 6 keys and 169 values
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.coastal.beach.SnowyBeach is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.cold.FrozenOcean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.FlowerForest is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.jungle.Jungle is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.flatland.IceSpikes is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.Meadow is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.groves.CherryGrove is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.savanna.SavannaPlateau is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.savanna.WindsweptSavanna is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.jungle.BambooJungle is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.BirchForest is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.wetland.swamp.MangroveSwamp is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.groves.Grove is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.peaks.JaggedPeaks is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.taiga.OldGrowthPineTaiga is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.cold.DeepFrozenOcean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.savanna.Savanna is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.taiga.Taiga is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.warm.WarmOcean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.flatland.plains.SnowyPlains is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.peaks.FrozenPeaks is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.river.FrozenRiver is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.cold.DeepColdOcean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.flatland.plains.Plains is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.hills.WindsweptHills is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.coastal.beach.Beach is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.taiga.OldGrowthSpruceTaiga is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.Forest is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.cold.ColdOcean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.warm.LukewarmOcean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.river.River is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.WindsweptForest is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.wetland.swamp.Swamp is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.flatland.plains.SunflowerPlains is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.peaks.StonyPeaks is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.SnowySlopes is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.OldGrowthBirchForest is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.warm.DeepLukewarmOcean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.jungle.SparseJungle is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.DeepOcean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.badlands.WoodedBadlands is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.taiga.SnowyTaiga is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.hills.WindsweptGravellyHills is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.Ocean is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.DarkForest is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.Desert is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.badlands.ErodedBadlands is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.badlands.Badlands is loaded
-[04:16:01] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.coastal.StonyShore is loaded
-[04:16:01] [Server thread/WARN]: [SonorousWorldGen] CustomChunkGenerator is used!
-[04:16:02] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
-[04:16:02] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:16:02] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[04:16:02] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:16:02] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
-[04:16:02] [Server thread/INFO]: Prepared spawn area in 0 ms
-[04:16:02] [Server thread/INFO]: Done preparing level "world" (0.619s)
-[04:16:02] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.17+2370-e42d8bc
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world) TNT ignition is PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world) Lighters are PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world) Lava fire is PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world) Fire spread is UNRESTRICTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world'
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world_nether) TNT ignition is PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world_nether) Lighters are PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world_nether) Lava fire is PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world_nether) Fire spread is UNRESTRICTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_nether'
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world_the_end) TNT ignition is PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world_the_end) Lighters are PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world_the_end) Lava fire is PERMITTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] (world_the_end) Fire spread is UNRESTRICTED.
-[04:16:02] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_the_end'
-[04:16:02] [Server thread/INFO]: [WorldGuard] Loading region data...
-[04:16:02] [Server thread/INFO]: [Chunky] Enabling Chunky v1.5.3
-[04:16:02] [Server thread/INFO]: [NDatabase] Enabling NDatabase v1.5.4
-[04:16:02] [Server thread/WARN]: [NDatabase] Could not save config.yml to plugins/NDatabase/config.yml because config.yml already exists.
-[04:16:02] [Server thread/INFO]: 
+[18:16:44] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[18:16:44] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
+[18:16:44] [ServerMain/INFO]: Found new data pack paper, loading it automatically
+[18:16:44] [Worker-Main-2/INFO]: No existing world data, creating new world
+[18:16:45] [ServerMain/INFO]: Loaded 1515 recipes
+[18:16:45] [ServerMain/INFO]: Loaded 1617 advancements
+[18:16:45] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[18:16:45] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 268.7ms
+[18:16:45] [Server thread/INFO]: Starting minecraft server version 26.1.2
+[18:16:45] [Server thread/INFO]: Loading properties
+[18:16:45] [Server thread/INFO]: This server is running Paper version 26.1.2-69-main@76d2ac7 (2026-06-03T17:32:02Z) (Implementing API version 26.1.2.build.69-stable)
+[18:16:45] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[18:16:45] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[18:16:45] [Server thread/INFO]: Using 4 threads for Netty based IO
+[18:16:45] [Server thread/INFO]: [MoonriseCommon] Paper is using 4 worker threads, 1 I/O threads
+[18:16:45] [Server thread/INFO]: Default game type: SURVIVAL
+[18:16:45] [Server thread/INFO]: Generating keypair
+[18:16:46] [Server thread/INFO]: Starting Minecraft server on *:25565
+[18:16:46] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[18:16:46] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[18:16:46] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.4.3-beta-01+80c6d6122
+[18:16:46] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@2cbde9e2]
+[18:16:46] [Server thread/INFO]: [squaremap] Loading server plugin squaremap v1.3.13
+[18:16:46] [Server thread/INFO]: [SonorousWorldGen] Loading server plugin SonorousWorldGen v1.0.0
+[18:16:46] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.17+2370-e42d8bc
+[18:16:46] [Server thread/INFO]: [Chunky] Loading server plugin Chunky v1.5.3
+[18:16:46] [Server thread/INFO]: [NDatabase] Loading server plugin NDatabase v1.5.4
+[18:16:46] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[18:16:46] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.4.3-beta-01+80c6d6122
+[18:16:46] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[18:16:46] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[18:16:46] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v26_1.PaperweightAdapter as the Bukkit adapter
+[18:16:47] [Server thread/INFO]: [squaremap] Enabling squaremap v1.3.13
+[18:16:47] [Server thread/INFO]: [io.undertow] starting server: Undertow - 2.3.24.Final
+[18:16:47] [Server thread/INFO]: [org.xnio] XNIO version 3.8.16.Final
+[18:16:47] [Server thread/INFO]: [org.xnio.nio] XNIO NIO Implementation Version 3.8.16.Final
+[18:16:47] [Server thread/INFO]: [org.jboss.threads] JBoss Threads version 3.7.0.Final
+[18:16:47] [Server thread/INFO]: [squaremap] Internal webserver running on 0.0.0.0:8080
+[18:16:47] [Server thread/INFO]: [SonorousWorldGen] Enabling SonorousWorldGen v1.0.0
+[18:16:47] [Server thread/INFO]: [SonorousWorldGen] WorldGenerator was enabled successfully.
+[18:16:47] [Server thread/INFO]: Preparing level "world"
+[18:16:47] [Server thread/INFO]: [org.reflections.Reflections] Reflections took 37 ms to scan 1 urls, producing 6 keys and 169 values
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.Meadow is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.cold.DeepFrozenOcean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.hills.WindsweptHills is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.river.FrozenRiver is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.river.River is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.savanna.WindsweptSavanna is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.flatland.plains.SunflowerPlains is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.savanna.Savanna is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.Desert is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.jungle.Jungle is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.peaks.JaggedPeaks is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.warm.DeepLukewarmOcean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.taiga.Taiga is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.cold.DeepColdOcean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.peaks.StonyPeaks is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.Ocean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.warm.WarmOcean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.DeepOcean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.badlands.ErodedBadlands is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.flatland.IceSpikes is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.coastal.beach.SnowyBeach is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.jungle.SparseJungle is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.savanna.SavannaPlateau is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.coastal.StonyShore is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.SnowySlopes is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.wetland.swamp.Swamp is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.jungle.BambooJungle is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.BirchForest is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.FlowerForest is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.hills.WindsweptGravellyHills is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.wetland.swamp.MangroveSwamp is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.taiga.OldGrowthPineTaiga is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.badlands.Badlands is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.flatland.plains.Plains is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.taiga.SnowyTaiga is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.aridland.badlands.WoodedBadlands is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.peaks.FrozenPeaks is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.cold.ColdOcean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.cold.FrozenOcean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.coastal.beach.Beach is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.DarkForest is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.OldGrowthBirchForest is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.groves.Grove is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.flatland.plains.SnowyPlains is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.offland.oceans.warm.LukewarmOcean is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.forest.Forest is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.WindsweptForest is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.woodland.taiga.OldGrowthSpruceTaiga is loaded
+[18:16:47] [Server thread/INFO]: com.sonorous.level.world.biome.biomes.highland.groves.CherryGrove is loaded
+[18:16:47] [Server thread/WARN]: [SonorousWorldGen] CustomChunkGenerator is used!
+[18:16:48] [Server thread/INFO]: Selecting spawn point for level 'minecraft:overworld'...
+[18:16:49] [Server thread/INFO]: Selecting spawn point for level 'minecraft:the_nether'...
+[18:16:49] [Server thread/INFO]: Selecting spawn point for level 'minecraft:the_end'...
+[18:16:49] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[18:16:49] [Server thread/INFO]: Preparing spawn area: 100%
+[18:16:49] [Server thread/INFO]: Prepared spawn area in 1679 ms
+[18:16:49] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[18:16:49] [Server thread/INFO]: Preparing spawn area: 100%
+[18:16:49] [Server thread/INFO]: Prepared spawn area in 664 ms
+[18:16:49] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
+[18:16:49] [Server thread/INFO]: Preparing spawn area: 100%
+[18:16:49] [Server thread/INFO]: Prepared spawn area in 136 ms
+[18:16:49] [Server thread/INFO]: Done preparing level "world" (2.225s)
+[18:16:49] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.17+2370-e42d8bc
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world) TNT ignition is PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world) Lighters are PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world) Lava fire is PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world) Fire spread is UNRESTRICTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world'
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world_nether) TNT ignition is PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world_nether) Lighters are PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world_nether) Lava fire is PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world_nether) Fire spread is UNRESTRICTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_nether'
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world_the_end) TNT ignition is PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world_the_end) Lighters are PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world_the_end) Lava fire is PERMITTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] (world_the_end) Fire spread is UNRESTRICTED.
+[18:16:50] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world_the_end'
+[18:16:50] [Server thread/INFO]: [WorldGuard] Loading region data...
+[18:16:50] [Server thread/INFO]: [Chunky] Enabling Chunky v1.5.3
+[18:16:50] [Server thread/INFO]: [NDatabase] Enabling NDatabase v1.5.4
+[18:16:50] [Server thread/WARN]: [NDatabase] Could not save config.yml to plugins/NDatabase/config.yml because config.yml already exists.
+[18:16:50] [Server thread/INFO]: 
 
   _   _   ____        _        _                    
  | \ | | |  _ \  __ _| |_ __ _| |__   __ _ ___  ___ 
@@ -133,120 +142,84 @@ Database type: SQLITE
  - https://github.com/NivixX/NDatabase/ 
  - Don't hesitate to drop a star and contribute to the project :)
 
-[04:16:03] [Server thread/INFO]: Loading SQLite driver
-[04:16:03] [Server thread/INFO]: SQLite driver has been loaded successfully.
-[04:16:03] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
-[04:16:03] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
-[04:16:03] [Server thread/INFO]: SQLite HikariCP DataSource initialized successfully.
-[04:16:03] [Server thread/INFO]: NDatabase platform (bukkit) has been loaded with success and the api is usable.
-[04:16:03] [Server thread/INFO]: [spark] Starting background profiler...
-[04:16:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[04:16:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[04:16:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[04:16:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[04:16:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[04:16:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[04:16:03] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[04:16:03] [Server thread/INFO]: Running delayed init tasks
-[04:16:03] [Server thread/INFO]: Done (8.697s)! For help, type "help"
-[04:16:03] [ForkJoinPool.commonPool-worker-1/INFO]: [squaremap] Fetching version information...
-[04:16:13] [Server thread/INFO]: [Chunky] A task was already started for this world. To continue running it, type '/chunky continue'. To start a new task, type '/chunky confirm'.
-[04:16:20] [Server thread/INFO]: [Chunky] Task continuing for world.
-[04:16:21] [Server thread/INFO]: [Chunky] Task running for world. Processed: 157 chunks (3.72%), ETA: 0:08:10, Rate: 8.3 cps, Current: 8, 13
-[04:16:22] [Server thread/INFO]: [Chunky] Task running for world. Processed: 238 chunks (5.63%), ETA: 0:01:37, Rate: 41.1 cps, Current: 14, 15
-[04:16:23] [Server thread/INFO]: [Chunky] Task running for world. Processed: 277 chunks (6.56%), ETA: 0:01:37, Rate: 40.4 cps, Current: 5, 20
-[04:16:24] [Server thread/INFO]: [Chunky] Task running for world. Processed: 312 chunks (7.38%), ETA: 0:01:40, Rate: 39.0 cps, Current: 4, 23
-[04:16:25] [Server thread/INFO]: [Chunky] Task running for world. Processed: 355 chunks (8.40%), ETA: 0:01:37, Rate: 39.6 cps, Current: 5, 29
-[04:16:26] [Server thread/INFO]: [Chunky] Task running for world. Processed: 404 chunks (9.56%), ETA: 0:01:34, Rate: 40.6 cps, Current: 9, 30
-[04:16:27] [Server thread/INFO]: [Chunky] Task running for world. Processed: 470 chunks (11.12%), ETA: 0:01:25, Rate: 44.0 cps, Current: 15, 28
-[04:16:28] [Server thread/INFO]: [Chunky] Task running for world. Processed: 526 chunks (12.45%), ETA: 0:01:21, Rate: 45.4 cps, Current: 20, 20
-[04:16:29] [Server thread/INFO]: [Chunky] Task running for world. Processed: 585 chunks (13.85%), ETA: 0:01:17, Rate: 46.8 cps, Current: 22, 23
-[04:16:30] [Server thread/INFO]: ℹ Server Plugins (6):
-[04:16:30] [Server thread/INFO]: Bukkit Plugins:
-[04:16:30] [Server thread/INFO]:  - Chunky, NDatabase, SonorousWorldGen, squaremap, WorldEdit, WorldGuard
-[04:16:30] [Server thread/INFO]: [Chunky] Task running for world. Processed: 638 chunks (15.10%), ETA: 0:01:15, Rate: 47.3 cps, Current: 23, 29
-[04:16:31] [Server thread/INFO]: [Chunky] Task running for world. Processed: 683 chunks (16.17%), ETA: 0:01:15, Rate: 47.0 cps, Current: 29, 25
-[04:16:32] [Server thread/INFO]: [Chunky] Task running for world. Processed: 740 chunks (17.51%), ETA: 0:01:13, Rate: 47.7 cps, Current: 31, 21
-[04:16:33] [Server thread/INFO]: [Chunky] Task running for world. Processed: 777 chunks (18.39%), ETA: 0:01:13, Rate: 46.9 cps, Current: 28, 12
-[04:16:34] [Server thread/INFO]: -------- squaremap command help (1/3) --------
-[04:16:34] [Server thread/INFO]: Showing search results for query: "/"
-[04:16:34] [Server thread/INFO]: └─ Available Commands:
-[04:16:34] [Server thread/INFO]:    ├─ /squaremap cancelrender [world]
-[04:16:34] [Server thread/INFO]:    ├─ /squaremap confirm
-[04:16:34] [Server thread/INFO]:    ├─ /squaremap fullrender [world]
-[04:16:34] [Server thread/INFO]:    ├─ /squaremap help [query]
-[04:16:34] [Server thread/INFO]:    ├─ /squaremap hide
-[04:16:34] [Server thread/INFO]:    └─ /squaremap hide <player>
-[04:16:34] [Server thread/INFO]: -------------------- [→] --------------------
-[04:16:34] [Server thread/INFO]: [Chunky] Task running for world. Processed: 870 chunks (20.59%), ETA: 0:01:07, Rate: 50.0 cps, Current: 16, 8
-[04:16:35] [Server thread/INFO]: [Chunky] Task running for world. Processed: 990 chunks (23.43%), ETA: 0:00:59, Rate: 54.4 cps, Current: 27, 5
-[04:16:37] [Server thread/INFO]: [Chunky] Task running for world. Processed: 1052 chunks (24.90%), ETA: 0:00:57, Rate: 54.7 cps, Current: 32, 4
-[04:16:38] [ForkJoinPool.commonPool-worker-7/INFO]: [Chunky] Task running for world. Processed: 1201 chunks (28.43%), ETA: 0:00:50, Rate: 59.9 cps, Current: 12, -19
-[04:16:39] [ForkJoinPool.commonPool-worker-27/INFO]: [Chunky] Task running for world. Processed: 1228 chunks (29.07%), ETA: 0:00:51, Rate: 58.1 cps, Current: 8, -18
-[04:16:40] [Server thread/INFO]: [Chunky] Task running for world. Processed: 1723 chunks (40.78%), ETA: 0:00:31, Rate: 80.1 cps, Current: 23, -6
-[04:16:41] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2035 chunks (48.17%), ETA: 0:00:24, Rate: 90.9 cps, Current: 30, -24
-[04:16:42] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2113 chunks (50.01%), ETA: 0:00:23, Rate: 88.6 cps, Current: -30, -27
-[04:16:43] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2170 chunks (51.36%), ETA: 0:00:23, Rate: 87.0 cps, Current: -28, -32
-[04:16:44] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2218 chunks (52.50%), ETA: 0:00:23, Rate: 85.4 cps, Current: -21, -26
-[04:16:45] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2281 chunks (53.99%), ETA: 0:00:23, Rate: 84.5 cps, Current: -17, -22
-[04:16:46] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2360 chunks (55.86%), ETA: 0:00:22, Rate: 84.1 cps, Current: -29, -16
-[04:16:46] [Server thread/INFO]: Unknown or incomplete command. See below for error
-squaresquaremap help<--[HERE]
-[04:16:47] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2412 chunks (57.09%), ETA: 0:00:21, Rate: 82.8 cps, Current: -28, -10
-[04:16:48] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2455 chunks (58.11%), ETA: 0:00:21, Rate: 81.2 cps, Current: -28, -5
-[04:16:50] [Server thread/INFO]: [Chunky] Task running for world. Processed: 2513 chunks (59.48%), ETA: 0:00:21, Rate: 80.2 cps, Current: -24, -2
-[04:16:51] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3010 chunks (71.24%), ETA: 0:00:12, Rate: 97.4 cps, Current: -16, -25
-[04:16:52] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3128 chunks (74.04%), ETA: 0:00:11, Rate: 98.6 cps, Current: -11, -32
-[04:16:53] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3173 chunks (75.10%), ETA: 0:00:10, Rate: 98.5 cps, Current: -28, 6
-[04:16:54] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3259 chunks (77.14%), ETA: 0:00:09, Rate: 100.1 cps, Current: -23, 7
-[04:16:55] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3323 chunks (78.65%), ETA: 0:00:08, Rate: 100.7 cps, Current: -26, 8
-[04:16:56] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3386 chunks (80.14%), ETA: 0:00:08, Rate: 101.0 cps, Current: -28, 16
-[04:16:57] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3434 chunks (81.28%), ETA: 0:00:07, Rate: 101.0 cps, Current: -31, 20
-[04:16:58] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3468 chunks (82.08%), ETA: 0:00:07, Rate: 99.9 cps, Current: -31, 28
-[04:16:59] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3519 chunks (83.29%), ETA: 0:00:07, Rate: 99.5 cps, Current: -25, 29
-[04:17:00] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3562 chunks (84.31%), ETA: 0:00:06, Rate: 99.2 cps, Current: -19, 26
-[04:17:01] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3649 chunks (86.37%), ETA: 0:00:05, Rate: 100.3 cps, Current: -16, 16
-[04:17:02] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3708 chunks (87.76%), ETA: 0:00:05, Rate: 100.3 cps, Current: -16, 29
-[04:17:03] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3758 chunks (88.95%), ETA: 0:00:04, Rate: 100.9 cps, Current: -14, 31
-[04:17:04] [Server thread/INFO]: [Chunky] Task running for world. Processed: 3862 chunks (91.41%), ETA: 0:00:03, Rate: 101.7 cps, Current: -7, 20
-[04:17:05] [Server thread/INFO]: [Chunky] Task running for world. Processed: 4163 chunks (98.53%), ETA: 0:00:00, Rate: 107.1 cps, Current: -32, 32
-[04:17:05] [Server thread/INFO]: [Chunky] Task finished for world. Processed: 4225 chunks (100.00%), Total time: 0:00:46
-[04:17:25] [Server thread/INFO]: [squaremap] Invalid command argument: No such world 'world'
-[04:18:11] [Server thread/INFO]: -------- squaremap command help (2/3) --------
-[04:18:11] [Server thread/INFO]: Showing search results for query: "/"
-[04:18:11] [Server thread/INFO]: └─ Available Commands:
-[04:18:11] [Server thread/INFO]:    ├─ /squaremap link
-[04:18:11] [Server thread/INFO]:    ├─ /squaremap pauserender [world]
-[04:18:11] [Server thread/INFO]:    ├─ /squaremap progresslogging
-[04:18:11] [Server thread/INFO]:    ├─ /squaremap progresslogging rate <seconds>
-[04:18:11] [Server thread/INFO]:    ├─ /squaremap progresslogging toggle
-[04:18:11] [Server thread/INFO]:    └─ /squaremap radiusrender <world> <radius> [center]
-[04:18:11] [Server thread/INFO]: ---------------- [←] --- [→] ----------------
-[04:18:16] [Server thread/INFO]: -------- squaremap command help (3/3) --------
-[04:18:16] [Server thread/INFO]: Showing search results for query: "/"
-[04:18:16] [Server thread/INFO]: └─ Available Commands:
-[04:18:16] [Server thread/INFO]:    ├─ /squaremap reload
-[04:18:16] [Server thread/INFO]:    ├─ /squaremap resetmap <world>
-[04:18:16] [Server thread/INFO]:    ├─ /squaremap show
-[04:18:16] [Server thread/INFO]:    └─ /squaremap show <player>
-[04:18:16] [Server thread/INFO]: -------------------- [←] --------------------
-[04:18:21] [Server thread/INFO]: [io.undertow] stopping server: Undertow - 2.3.24.Final
-[04:18:21] [Server thread/INFO]: [squaremap] Internal webserver stopped
-[04:18:21] [Server thread/INFO]: [io.undertow] starting server: Undertow - 2.3.24.Final
-[04:18:21] [Server thread/INFO]: [squaremap] Internal webserver running on 0.0.0.0:8080
-[04:18:21] [Server thread/INFO]: squaremap v1.3.13 reloaded
-[04:18:37] [Server thread/INFO]: Unknown or incomplete command. See below for error
-...p resetmap<--[HERE]
-[04:18:47] [Server thread/INFO]: [squaremap] Invalid command argument: No such world 'world'
-[04:18:52] [Server thread/INFO]: Unknown or incomplete command. See below for error
-orld<--[HERE]
-[04:18:59] [Server thread/INFO]: Expected whitespace to end one argument, but found trailing data
-... resetmap World<--[HERE]
-[04:19:08] [Server thread/INFO]: Expected whitespace to end one argument, but found trailing data
-... resetmap World<--[HERE]
-[04:19:19] [User Authenticator #0/INFO]: UUID of player SonorousMC is 76ec9343-0aac-4acb-945d-0f73d3df8988
-[04:19:19] [Server thread/INFO]: [HorriblePlayerLoginEventHack] You have plugins listening to the PlayerLoginEvent, this will cause re-configuration APIs to be unavailable: [WorldGuard]
-[04:19:19] [Server thread/INFO]: SonorousMC joined the game
-[04:19:19] [Server thread/INFO]: SonorousMC[/127.0.0.1:55486] logged in with entity id 24 at ([minecraft:overworld]188.68091188479391, 99.50046950808563, -280.7886162445064)
-[04:20:41] [Server thread/INFO]: SonorousMC lost connection: Disconnected
-[04:20:41] [Server thread/INFO]: SonorousMC left the game
+[18:16:50] [Server thread/INFO]: Loading SQLite driver
+[18:16:50] [Server thread/INFO]: SQLite driver has been loaded successfully.
+[18:16:50] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+[18:16:50] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+[18:16:50] [Server thread/INFO]: SQLite HikariCP DataSource initialized successfully.
+[18:16:50] [Server thread/INFO]: NDatabase platform (bukkit) has been loaded with success and the api is usable.
+[18:16:50] [Server thread/INFO]: [spark] Starting background profiler...
+[18:16:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:16:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18:16:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18:16:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:16:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:16:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:16:50] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[18:16:50] [Server thread/INFO]: Running delayed init tasks
+[18:16:50] [Server thread/INFO]: Done (11.292s)! For help, type "help"
+[18:16:50] [ForkJoinPool.commonPool-worker-1/INFO]: [squaremap] Fetching version information...
+[18:17:50] [User Authenticator #0/INFO]: UUID of player SonorousMC is 76ec9343-0aac-4acb-945d-0f73d3df8988
+[18:17:50] [Server thread/INFO]: [HorriblePlayerLoginEventHack] You have plugins listening to the PlayerLoginEvent, this will cause re-configuration APIs to be unavailable: [WorldGuard]
+[18:17:51] [Server thread/INFO]: SonorousMC joined the game
+[18:17:51] [Server thread/INFO]: SonorousMC[/127.0.0.1:50178] logged in with entity id 1 at ([minecraft:overworld]440.5, 76.0, 507.5)
+[18:17:54] [Server thread/INFO]: [SonorousMC: Set own game mode to Creative Mode]
+[18:18:51] [Server thread/INFO]: SonorousMC issued server command: /tp @s -832 ~ 744
+[18:18:51] [Server thread/INFO]: [SonorousMC: Teleported SonorousMC to -831.500000, 107.749307, 744.500000]
+[18:19:37] [Server thread/INFO]: SonorousMC issued server command: /tp @s -1692 ~ 1200
+[18:19:37] [Server thread/INFO]: [SonorousMC: Teleported SonorousMC to -1691.500000, 135.636296, 1200.500000]
+[18:19:47] [Server thread/INFO]: SonorousMC issued server command: /tp @s -1716 ~ 1700
+[18:19:47] [Server thread/INFO]: [SonorousMC: Teleported SonorousMC to -1715.500000, 100.487931, 1700.500000]
+[18:19:54] [Server thread/INFO]: SonorousMC issued server command: /tp @s -2110 ~ 1473
+[18:19:54] [Server thread/INFO]: [SonorousMC: Teleported SonorousMC to -2109.500000, 81.000000, 1473.500000]
+[18:20:13] [Server thread/INFO]: SonorousMC issued server command: /minecraft:locate biome minecraft:ocean
+[18:20:19] [Server thread/WARN]: SonorousMC moved too quickly! 10.573335489705187,-1.0104000401496904,1.7524508457090633
+[18:20:27] [Server thread/INFO]: SonorousMC issued server command: /minecraft:locate biome minecraft:cold_ocean
+[18:20:27] [Server thread/INFO]: Locating element minecraft:cold_ocean took 872 ms
+[18:20:30] [Server thread/INFO]: SonorousMC issued server command: /tp @s -4222 92 92
+[18:20:30] [Server thread/INFO]: [SonorousMC: Teleported SonorousMC to -4221.500000, 92.000000, 92.500000]
+[18:21:27] [Server thread/INFO]: SonorousMC lost connection: Disconnected
+[18:21:27] [Server thread/INFO]: SonorousMC left the game
+[18:21:45] [Server thread/INFO]: Stopping server
+[18:21:45] [Server thread/INFO]: [NDatabase] Disabling NDatabase v1.5.4
+[18:21:45] [Server thread/INFO]: [Chunky] Disabling Chunky v1.5.3
+[18:21:45] [Server thread/INFO]: [WorldGuard] Disabling WorldGuard v7.0.17+2370-e42d8bc
+[18:21:45] [Server thread/INFO]: [WorldGuard] Shutting down executor and cancelling any pending tasks...
+[18:21:45] [Server thread/INFO]: [SonorousWorldGen] Disabling SonorousWorldGen v1.0.0
+[18:21:45] [Server thread/INFO]: [SonorousWorldGen] WorldGenerator was disabled successfully.
+[18:21:45] [Server thread/INFO]: [squaremap] Disabling squaremap v1.3.13
+[18:21:45] [Server thread/INFO]: [io.undertow] stopping server: Undertow - 2.3.24.Final
+[18:21:45] [Server thread/INFO]: [squaremap] Internal webserver stopped
+[18:21:45] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.4.3-beta-01+80c6d6122
+[18:21:45] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[18:21:45] [Server thread/INFO]: Saving players
+[18:21:45] [Server thread/INFO]: Saving worlds
+[18:21:45] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:21:45] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
+[18:21:45] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
+[18:21:45] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
+[18:21:45] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.01s
+[18:21:45] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
+[18:21:45] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
+[18:21:45] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
+[18:21:46] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_end'
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_end'
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_end'
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_end' in 0.00s
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_end'
+[18:21:46] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_end'
+[18:21:46] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:21:46] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:21:46] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:21:46] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[18:21:46] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[18:21:46] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[18:21:46] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[18:21:46] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
