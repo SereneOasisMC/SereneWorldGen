@@ -17,8 +17,9 @@ public class DarkForest extends BiomeRepresentation implements TreeBiome, FloraB
 
     private static final HashMap<BiomeLayers, List<Material>> layers = new HashMap<>() {{
         put(BiomeLayers.SURFACE, List.of(Material.GRASS_BLOCK));
-        put(BiomeLayers.PRIMARY, List.of(Material.DIRT));
-        put(BiomeLayers.SECONDARY, Arrays.asList(Material.COAL_ORE, Material.IRON_ORE, Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.GOLD_ORE, Material.DIAMOND_ORE));
+        put(BiomeLayers.PRIMARY, List.of(Material.DIRT, Material.DIRT, Material.DIRT, Material.PODZOL, Material.COARSE_DIRT));
+        put(BiomeLayers.SECONDARY, Arrays.asList(Material.STONE));
+        put(BiomeLayers.ORES, Arrays.asList(Material.COAL_ORE, Material.IRON_ORE, Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.GOLD_ORE, Material.DIAMOND_ORE));
         put(BiomeLayers.BASE, List.of(Material.BEDROCK));
     }};
     public DarkForest() {

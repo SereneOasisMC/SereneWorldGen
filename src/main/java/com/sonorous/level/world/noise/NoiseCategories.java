@@ -10,7 +10,7 @@ public enum NoiseCategories {
     CONTINENTALNESS,
     TEMPERATURE,
     HUMIDITY,
-    DETAIl,
+    DETAIL,
 
     WEIRDNESS,
 

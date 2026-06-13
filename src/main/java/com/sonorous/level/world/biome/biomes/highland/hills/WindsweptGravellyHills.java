@@ -15,8 +15,9 @@ public class WindsweptGravellyHills extends BiomeRepresentation implements Flora
 
     private static final HashMap<BiomeLayers, List<Material>> layers = new HashMap<>() {{
         put(BiomeLayers.SURFACE, List.of(Material.GRAVEL));
-        put(BiomeLayers.PRIMARY, List.of(Material.GRAVEL));
-        put(BiomeLayers.SECONDARY, Arrays.asList(Material.COAL_ORE, Material.IRON_ORE, Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.GOLD_ORE, Material.DIAMOND_ORE));
+        put(BiomeLayers.PRIMARY, List.of(Material.GRAVEL, Material.COBBLESTONE, Material.GRAVEL, Material.GRAVEL));
+        put(BiomeLayers.SECONDARY, Arrays.asList(Material.STONE));
+        put(BiomeLayers.ORES, Arrays.asList(Material.COAL_ORE, Material.IRON_ORE, Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.GOLD_ORE, Material.DIAMOND_ORE));
         put(BiomeLayers.BASE, List.of(Material.BEDROCK));
     }};
     public WindsweptGravellyHills() {

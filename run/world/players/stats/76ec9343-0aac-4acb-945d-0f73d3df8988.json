@@ -1,22 +1,19 @@
 {
   "stats": {
-    "minecraft:used": {
-      "minecraft:diamond_ore": 7
-    },
     "minecraft:custom": {
-      "minecraft:time_since_rest": 4163,
-      "minecraft:walk_one_cm": 173,
-      "minecraft:leave_game": 1,
-      "minecraft:walk_under_water_one_cm": 13648,
-      "minecraft:play_time": 4163,
-      "minecraft:jump": 13,
-      "minecraft:time_since_death": 4163,
-      "minecraft:sprint_one_cm": 1157,
-      "minecraft:swim_one_cm": 1415,
-      "minecraft:total_world_time": 4163,
-      "minecraft:fly_one_cm": 165188,
-      "minecraft:walk_on_water_one_cm": 3121,
-      "minecraft:sneak_time": 466
+      "minecraft:time_since_rest": 6417,
+      "minecraft:walk_one_cm": 331,
+      "minecraft:leave_game": 2,
+      "minecraft:walk_under_water_one_cm": 1841,
+      "minecraft:play_time": 6417,
+      "minecraft:jump": 8,
+      "minecraft:time_since_death": 6417,
+      "minecraft:sprint_one_cm": 91,
+      "minecraft:swim_one_cm": 1068,
+      "minecraft:total_world_time": 6417,
+      "minecraft:fly_one_cm": 333614,
+      "minecraft:walk_on_water_one_cm": 8506,
+      "minecraft:sneak_time": 677
     }
   },
   "DataVersion": 4790

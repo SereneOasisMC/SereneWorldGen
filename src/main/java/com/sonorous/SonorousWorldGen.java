@@ -7,6 +7,8 @@ import com.sonorous.level.world.chunk.CustomChunkGenerator;
 import com.sonorous.level.world.noise.NoiseMaster;
 import com.sonorous.listeners.SWGListener;
 //// import com.sereneoasis.utils.NPCUtils;
+import org.bukkit.GameRule;
+import org.bukkit.GameRules;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -38,7 +40,6 @@ public class SonorousWorldGen extends JavaPlugin {
         fileManager = new FileManager();
         this.getServer().getPluginManager().registerEvents(new SWGListener(), this);
         this.getCommand("SonorousWorldGen").setExecutor(new SWGCommand());
-
 //        NPCUtils.initUUID(0, this);
     }
 

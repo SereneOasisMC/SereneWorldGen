@@ -16,9 +16,10 @@ import java.util.List;
 public class Desert extends BiomeRepresentation implements FloraBiome, FeatureBiome {
 
     private static final HashMap<BiomeLayers, List<Material>> layers = new HashMap<>() {{
-        put(BiomeLayers.SURFACE, List.of(Material.SAND));
-        put(BiomeLayers.PRIMARY, List.of(Material.SANDSTONE));
-        put(BiomeLayers.SECONDARY, Arrays.asList(Material.COAL_ORE, Material.IRON_ORE, Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.GOLD_ORE, Material.DIAMOND_ORE));
+        put(BiomeLayers.SURFACE, List.of(Material.SAND, Material.SAND, Material.SAND, Material.RED_SAND));
+        put(BiomeLayers.PRIMARY, List.of(Material.SANDSTONE, Material.SANDSTONE, Material.SANDSTONE, Material.RED_SANDSTONE));
+        put(BiomeLayers.SECONDARY, Arrays.asList(Material.STONE));
+        put(BiomeLayers.ORES, Arrays.asList(Material.COAL_ORE, Material.IRON_ORE, Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.GOLD_ORE, Material.DIAMOND_ORE));
         put(BiomeLayers.BASE, List.of(Material.BEDROCK));
     }};
     public Desert() {

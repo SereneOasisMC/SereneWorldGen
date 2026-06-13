@@ -3,7 +3,9 @@ package com.sonorous.listeners;
 import com.sonorous.loader.ChunkHandler;
 // import com.sereneoasis.npc.random.types.BasicNPC;
 // import com.sereneoasis.utils.NPCUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
+import org.bukkit.GameRules;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 import org.bukkit.entity.Player;
@@ -11,6 +13,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.world.WorldLoadEvent;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -50,16 +53,16 @@ public class SWGListener implements Listener {
 
 
     private static ChunkHandler chunkHandler;
-//    @EventHandler
-//    public void onWorldLoad(WorldLoadEvent event){
-//
-//
-//            World world = event.getWorld();
-//            Bukkit.broadcastMessage("World initialised");
+    @EventHandler
+    public void onWorldLoad(WorldLoadEvent event){
+
+
+            World world = event.getWorld();
+            Bukkit.broadcastMessage("World initialised");
 //            chunkHandler = new ChunkHandler(world);
-//
-//    }
-//
+        world.setGameRule(GameRules.WATER_SOURCE_CONVERSION, false);
+    }
+
 
 
 

@@ -12,9 +12,10 @@ import java.util.List;
 public class FrozenRiver extends BiomeRepresentation {
 
     private static final HashMap<BiomeLayers, List<Material>> layers = new HashMap<>() {{
-        put(BiomeLayers.SURFACE, List.of(Material.ICE));
+        put(BiomeLayers.SURFACE, List.of(Material.ICE, Material.WATER, Material.WATER, Material.WATER, Material.WATER));
         put(BiomeLayers.PRIMARY, Arrays.asList(Material.BLUE_ICE, Material.PACKED_ICE, Material.ICE));
-        put(BiomeLayers.SECONDARY, Arrays.asList(Material.COAL_ORE, Material.IRON_ORE, Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.GOLD_ORE, Material.DIAMOND_ORE));
+        put(BiomeLayers.SECONDARY, Arrays.asList(Material.STONE));
+        put(BiomeLayers.ORES, Arrays.asList(Material.COAL_ORE, Material.IRON_ORE, Material.REDSTONE_ORE, Material.LAPIS_ORE, Material.GOLD_ORE, Material.DIAMOND_ORE));
         put(BiomeLayers.BASE, List.of(Material.BEDROCK));
     }};
     public FrozenRiver() {

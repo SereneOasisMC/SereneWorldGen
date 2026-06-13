@@ -8,5 +8,6 @@ public enum BiomeLayers {
     SURFACE,
     PRIMARY,
     SECONDARY,
+    ORES,
     BASE
 }

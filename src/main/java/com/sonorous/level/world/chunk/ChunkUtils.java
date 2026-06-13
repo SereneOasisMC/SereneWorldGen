@@ -10,38 +10,43 @@ public class ChunkUtils {
 
     public static final int Y_LIMIT = 300;
     public static final int SEA_LEVEL = 70;
-    public static final int LAYER_1_HEIGHT = 10;
+    public static final int COAST_HEIGHT = 100;
+    public static final int FLATLAND_HEIGHT = 110;
+    public static final int WETLAND_HEIGHT = 130;
+    public static final int WOODLAND_HEIGHT = 170;
+    public static final int ARID_HEIGHT = 175;
+    public static final int HIGHLAND_HEIGHT = 230;
+
+    public static final int PRIMARY_HEIGHT = 10;
+//    public static final int SECONDARY_HEIGHT = 30;
 
     public static final float EROSION_FLATTEN = 0.6f;
     public static final float PEAKS_DEVIATION = 1.2f;
 
-    // Continentalness Noise Bounds
     public static final float NOISE_BOUND_OFFLAND = -0.2f;
     public static final float NOISE_BOUND_COASTAL = -0.1f;
     public static final float NOISE_BOUND_FLATLAND = 0.15f;
     public static final float NOISE_BOUND_WETLAND = 0.25f;
     public static final float NOISE_BOUND_WOODLAND = 0.35f;
     public static final float NOISE_BOUND_ARID = 0.45f;
+    public static final float NOISE_BOUND_HIGHLAND = 1.0f;
 
-    // Height Targets
-    public static final float HEIGHT_DEEP_OCEAN = 35.0f;
-    public static final float HEIGHT_SEA_LEVEL_FLOOR = (float) (SEA_LEVEL - 5); // 65.0f
-    public static final float HEIGHT_SHORE_LINE = (float) (SEA_LEVEL + 2);       // 72.0f (Beach peaks above water)
-    public static final float HEIGHT_HIGHLAND_BASE = (float) (SEA_LEVEL + 4);    // 74.0f
-    public static final float HEIGHT_MOUNTAIN_PEAK = 220.0f;
+
 
     public static final float BASE_PEAK_INTENSITY_SCALE = 40.0f;
-    public static final float RIVER_THRESHOLD = 0.9f;
+    public static final float RIVER_TAPER_START = 0.90f, RIVER_THRESHOLD = 0.92f;
 
     private static final Map<Long, HeightData> heightCache = new ConcurrentHashMap<>();
 
     public static class HeightData {
-        public final float surfaceY;   // True top surface (Water level for rivers/oceans, solid block for land)
-        public final float riverbedY;  // Solid ground underneath river water
+        public float surfaceY;
+        public float primaryY;
+        public float secondaryY;
 
-        public HeightData(float surfaceY, float riverbedY) {
+        public HeightData(float surfaceY, float primaryY, float secondaryY) {
             this.surfaceY = surfaceY;
-            this.riverbedY = riverbedY;
+            this.primaryY = primaryY;
+            this.secondaryY = secondaryY;
         }
     }
 
@@ -49,26 +54,176 @@ public class ChunkUtils {
         return start + t * (end - start);
     }
 
-    private static float evaluateContinentalSpline(float noiseVal) {
-        if (noiseVal < NOISE_BOUND_OFFLAND) { // Below -0.2
-            float t = (noiseVal - (-1.0f)) / (NOISE_BOUND_OFFLAND - (-1.0f));
-            return lerp(HEIGHT_DEEP_OCEAN, HEIGHT_SEA_LEVEL_FLOOR, t);
+    private static float getContinentMinByNoise(float noiseVal) {
+        if (noiseVal < NOISE_BOUND_OFFLAND) {
+            return SEA_LEVEL;
         }
-        else if (noiseVal < NOISE_BOUND_COASTAL) { // -0.2 to -0.1 (Shoreline transition)
-            float t = (noiseVal - NOISE_BOUND_OFFLAND) / (NOISE_BOUND_COASTAL - NOISE_BOUND_OFFLAND);
-            // Smoothly climbs from deep water floor (65) up to dry beach (72), crossing sea level (70)
-            return lerp(HEIGHT_SEA_LEVEL_FLOOR, HEIGHT_SHORE_LINE, t);
+
+        else if (noiseVal < NOISE_BOUND_COASTAL) {
+            return SEA_LEVEL;
         }
-        else if (noiseVal < NOISE_BOUND_FLATLAND) { // -0.1 to 0.15
-            float t = (noiseVal - NOISE_BOUND_COASTAL) / (NOISE_BOUND_FLATLAND - NOISE_BOUND_COASTAL);
-            // Continues from dry beach (72) up to inland valleys (74)
-            return lerp(HEIGHT_SHORE_LINE, HEIGHT_HIGHLAND_BASE, t);
+        else if (noiseVal < NOISE_BOUND_FLATLAND) {
+            return COAST_HEIGHT;
         }
-        else { // Above 0.15
-            float t = (noiseVal - NOISE_BOUND_FLATLAND) / (1.0f - NOISE_BOUND_FLATLAND);
-            return lerp(HEIGHT_HIGHLAND_BASE, HEIGHT_MOUNTAIN_PEAK, t);
+        else if (noiseVal < NOISE_BOUND_WETLAND){
+            return FLATLAND_HEIGHT;
+        }
+        else if (noiseVal < NOISE_BOUND_WOODLAND){
+            return WETLAND_HEIGHT;
+        }
+        else if (noiseVal < NOISE_BOUND_ARID){
+            float t = (noiseVal - NOISE_BOUND_WOODLAND) / (NOISE_BOUND_ARID - NOISE_BOUND_WOODLAND);
+            return WOODLAND_HEIGHT;
+        } else {
+            float t = (noiseVal - NOISE_BOUND_ARID) / (NOISE_BOUND_HIGHLAND - NOISE_BOUND_ARID);
+            return ARID_HEIGHT;
         }
     }
+
+    private static float getContinentMaxByNoise(float noiseVal) {
+        if (noiseVal < NOISE_BOUND_OFFLAND) {
+            return COAST_HEIGHT;
+        }
+        else if (noiseVal < NOISE_BOUND_COASTAL) {
+            return FLATLAND_HEIGHT;
+        }
+        else if (noiseVal < NOISE_BOUND_FLATLAND) {
+            return WETLAND_HEIGHT;
+        }
+        else if (noiseVal < NOISE_BOUND_WETLAND){
+            return FLATLAND_HEIGHT;
+        }
+        else if (noiseVal < NOISE_BOUND_WOODLAND){
+            return WOODLAND_HEIGHT;
+        }
+        else if (noiseVal < NOISE_BOUND_ARID){
+            float t = (noiseVal - NOISE_BOUND_WOODLAND) / (NOISE_BOUND_ARID - NOISE_BOUND_WOODLAND);
+            return ARID_HEIGHT;
+        } else {
+            float t = (noiseVal - NOISE_BOUND_ARID) / (NOISE_BOUND_HIGHLAND - NOISE_BOUND_ARID);
+            return HIGHLAND_HEIGHT;
+        }
+    }
+
+    private static float evaluateContinentalSpline(float noiseVal) {
+        if (noiseVal < NOISE_BOUND_OFFLAND) {
+            return SEA_LEVEL;
+        }
+
+        else if (noiseVal < NOISE_BOUND_COASTAL) {
+            float t = (noiseVal - NOISE_BOUND_OFFLAND) / (NOISE_BOUND_COASTAL - NOISE_BOUND_OFFLAND);
+            return lerp(SEA_LEVEL, COAST_HEIGHT, t);
+        }
+        else if (noiseVal < NOISE_BOUND_FLATLAND) {
+            float t = (noiseVal - NOISE_BOUND_COASTAL) / (NOISE_BOUND_FLATLAND - NOISE_BOUND_COASTAL);
+            return lerp(COAST_HEIGHT, FLATLAND_HEIGHT, t);
+        }
+        else if (noiseVal < NOISE_BOUND_WETLAND){
+            float t = (noiseVal - NOISE_BOUND_FLATLAND) / (NOISE_BOUND_WETLAND - NOISE_BOUND_FLATLAND);
+            return lerp(FLATLAND_HEIGHT, WETLAND_HEIGHT, t);
+        }
+        else if (noiseVal < NOISE_BOUND_WOODLAND){
+            float t = (noiseVal - NOISE_BOUND_WETLAND) / (NOISE_BOUND_WOODLAND - NOISE_BOUND_WETLAND);
+            return lerp(WETLAND_HEIGHT, WOODLAND_HEIGHT, t);
+        }
+        else if (noiseVal < NOISE_BOUND_ARID){
+            float t = (noiseVal - NOISE_BOUND_WOODLAND) / (NOISE_BOUND_ARID - NOISE_BOUND_WOODLAND);
+            return lerp(WOODLAND_HEIGHT, ARID_HEIGHT, t);
+        } else {
+            float t = (noiseVal - NOISE_BOUND_ARID) / (NOISE_BOUND_HIGHLAND - NOISE_BOUND_ARID);
+            return lerp(ARID_HEIGHT, HIGHLAND_HEIGHT, t);
+        }
+    }
+
+    private static int OFFSET = 1;
+    private static int DISTANCE = 5;
+    private static float calculateSurfaceHeight(int x, int z, float continentalness, float erosion, float weirdness, float detailNoise, float riverNoise) {
+
+
+
+        float erosionFactor = (erosion + 1.0f) * 0.5f;
+        float baseHeight = evaluateContinentalSpline(continentalness);
+
+
+
+        if (riverNoise < RIVER_THRESHOLD){
+            float riverFactor = Math.max(0, (riverNoise - RIVER_TAPER_START) / ( RIVER_THRESHOLD - RIVER_TAPER_START) );
+            return lerp(baseHeight,  baseHeight - 2, riverFactor);
+        } else {
+            float riverNoiseEast  = GenerationNoise.getNoise(NoiseCategories.RIVER, x + OFFSET, z);
+            float riverNoiseWest  = GenerationNoise.getNoise(NoiseCategories.RIVER, x - OFFSET, z);
+            float riverNoiseNorth = GenerationNoise.getNoise(NoiseCategories.RIVER, x, z - OFFSET);
+            float riverNoiseSouth = GenerationNoise.getNoise(NoiseCategories.RIVER, x, z + OFFSET);
+
+            float deltaX = riverNoiseEast - riverNoiseWest;
+            float deltaZ = riverNoiseSouth - riverNoiseNorth;
+
+            float localTerrainSlope;
+            if (Math.abs(deltaX) > Math.abs(deltaZ)) {
+                float terrainNorth = evaluateContinentalSpline(GenerationNoise.getNoise(NoiseCategories.CONTINENTALNESS, x, z - DISTANCE));
+                float terrainSouth = evaluateContinentalSpline(GenerationNoise.getNoise(NoiseCategories.CONTINENTALNESS, x, z + DISTANCE));
+                localTerrainSlope = (terrainNorth + terrainSouth) * 0.5f;
+            } else {
+                float terrainEast = evaluateContinentalSpline(GenerationNoise.getNoise(NoiseCategories.CONTINENTALNESS, x + DISTANCE, z));
+                float terrainWest = evaluateContinentalSpline(GenerationNoise.getNoise(NoiseCategories.CONTINENTALNESS, x - DISTANCE, z));
+                localTerrainSlope = (terrainEast + terrainWest) * 0.5f;
+            }
+
+            float SLOPE_GENTLENESS = 0.3f;
+            localTerrainSlope = lerp(baseHeight, localTerrainSlope, SLOPE_GENTLENESS);
+
+            float riverFactor = Math.max(0, (riverNoise - RIVER_THRESHOLD) / (1 - RIVER_THRESHOLD)) *  Math.max(0, (riverNoise - RIVER_THRESHOLD) / (1 - RIVER_THRESHOLD));
+            float riverBedHeight = localTerrainSlope - 2.0f;
+
+            return lerp(baseHeight - 1.0f, riverBedHeight, riverFactor);
+
+        }
+
+
+
+//        float peakIntensity = (1.0f - erosionFactor);
+//        float ridgeNoise = 1.0f - Math.abs(weirdness);
+//        float pinchedPeaks = (float) Math.pow(ridgeNoise, 3.0) * PEAKS_DEVIATION * BASE_PEAK_INTENSITY_SCALE * peakIntensity;
+//
+//        float globalProgress = (continentalness + 1.0f) * 0.5f;
+//        float smoothDetailFactor = smoothstep(0.0f, 1.0f, globalProgress);
+//        float dynamicDetailAmplitude = 4.0f + (smoothDetailFactor * 16.0f);
+//        float microDetail = detailNoise * dynamicDetailAmplitude;
+
+//        return baseHeight + pinchedPeaks + microDetail;
+    }
+
+//    private static float calculatePrimaryHeight(float continentalness, float erosion, float weirdness, float detailNoise) {
+//        float erosionFactor = (erosion + 1.0f) * 0.5f;
+//        float baseHeight = evaluateContinentalSpline(continentalness);
+//
+//        float peakIntensity = (1.0f - erosionFactor);
+//        float ridgeNoise = 1.0f - Math.abs(weirdness);
+//        float pinchedPeaks = (float) Math.pow(ridgeNoise, 3.0) * PEAKS_DEVIATION * BASE_PEAK_INTENSITY_SCALE * peakIntensity;
+//
+//        float globalProgress = (continentalness + 1.0f) * 0.5f;
+//        float smoothDetailFactor = smoothstep(0.0f, 1.0f, globalProgress);
+//        float dynamicDetailAmplitude = 4.0f + (smoothDetailFactor * 16.0f);
+//        float microDetail = detailNoise * dynamicDetailAmplitude;
+//
+//        return baseHeight + pinchedPeaks + microDetail;
+//    }
+//
+//    private static float calculateSecondaryHeight(float continentalness, float erosion, float weirdness, float detailNoise) {
+//        float erosionFactor = (erosion + 1.0f) * 0.5f;
+//        float baseHeight = evaluateContinentalSpline(continentalness);
+//
+//        float peakIntensity = (1.0f - erosionFactor);
+//        float ridgeNoise = 1.0f - Math.abs(weirdness);
+//        float pinchedPeaks = (float) Math.pow(ridgeNoise, 3.0) * PEAKS_DEVIATION * BASE_PEAK_INTENSITY_SCALE * peakIntensity;
+//
+//        float globalProgress = (continentalness + 1.0f) * 0.5f;
+//        float smoothDetailFactor = smoothstep(0.0f, 1.0f, globalProgress);
+//        float dynamicDetailAmplitude = 4.0f + (smoothDetailFactor * 16.0f);
+//        float microDetail = detailNoise * dynamicDetailAmplitude;
+//
+//        return baseHeight + pinchedPeaks + microDetail;
+//    }
 
     public static HeightData getHeightData(int x, int z) {
         long key = ((long) x << 32) | (z & 0xFFFFFFFFL);
@@ -77,45 +232,19 @@ public class ChunkUtils {
             float continentalness = GenerationNoise.getNoise(NoiseCategories.CONTINENTALNESS, x, z);
             float erosion = GenerationNoise.getNoise(NoiseCategories.EROSION, x, z);
             float weirdness = GenerationNoise.getNoise(NoiseCategories.WEIRDNESS, x, z);
-
-            float erosionFactor = (erosion + 1.0f) * 0.5f;
-            float baseHeight = evaluateContinentalSpline(continentalness);
-
-            float peakIntensity = (1.0f - erosionFactor);
-            float peaksVariation = Math.abs(weirdness) * PEAKS_DEVIATION * BASE_PEAK_INTENSITY_SCALE * peakIntensity;
-
-            // This is the actual solid ground floor (ocean floor or land surface)
-            float terrainHeight = baseHeight + peaksVariation;
+            float detailNoise = GenerationNoise.getNoise(NoiseCategories.DETAIL, x, z);
 
             float riverNoise = GenerationNoise.getNoise(NoiseCategories.RIVER, x, z);
 
-            // Default values assume normal land
-            float finalSurfaceY = terrainHeight;
-            float solidRiverbedY = terrainHeight;
+            
 
-            // 1. Handle Rivers
-            if (riverNoise > RIVER_THRESHOLD && continentalness >= NOISE_BOUND_OFFLAND && continentalness < NOISE_BOUND_ARID) {
-                float maxTrenchDepth = 6.0f;
-                float riverTrench = riverNoise * maxTrenchDepth;
+            float terrainHeight = calculateSurfaceHeight(x,z, continentalness, erosion, weirdness, detailNoise, riverNoise);
 
-                // Water surface snaps to sea level or stays flat with high terrain
-                finalSurfaceY = Math.max((float) SEA_LEVEL, terrainHeight);
-                // Riverbed drops below the water surface
-                solidRiverbedY = finalSurfaceY - riverTrench;
-            }
-            // 2. Handle Oceans / Seas (Any terrain that dips below Sea Level)
-            else if (terrainHeight < SEA_LEVEL) {
-                // CRITICAL: The visible surface of an ocean is ALWAYS the water line (SEA_LEVEL)
-                finalSurfaceY = (float) SEA_LEVEL;
-                // The actual solid block floor is the deep terrain height we calculated
-                solidRiverbedY = terrainHeight;
-            }
+            HeightData data = new HeightData(terrainHeight, terrainHeight - 1, terrainHeight- PRIMARY_HEIGHT);
 
-            // Apply global world limits
-            float boundedSurfaceY = Math.max(LAYER_1_HEIGHT, Math.min(Y_LIMIT, finalSurfaceY));
-            float boundedRiverbedY = Math.max(LAYER_1_HEIGHT, Math.min(boundedSurfaceY, solidRiverbedY));
+                return data;
 
-            return new HeightData(boundedSurfaceY, boundedRiverbedY);
+
         });
     }
 

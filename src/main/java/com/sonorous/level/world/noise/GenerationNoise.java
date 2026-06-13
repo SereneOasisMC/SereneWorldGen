@@ -24,20 +24,7 @@ public class GenerationNoise {
      */
     public static float getNoise(NoiseCategories noiseCategories, int x, int z){
         float noise = NOISE_TYPE_FUNCTION_MAP.get(noiseCategories).GetNoise(x, z);
-//        switch (noiseCategories){
-//            case CONTINENTALNESS -> {
-//                return noise*1.7f;
-//            }
-//            case HUMIDITY, TEMPERATURE -> {
-//                return noise*1.5f;
-//            }
-//            case CUSTOM_TREES -> {
-//                return noise *1.6f;
-//            }
-//            default -> {
-//                return noise;
-//            }
-//        }
+
         return noise;
     }
 
@@ -54,6 +41,7 @@ public class GenerationNoise {
     }
 
     private final FastNoiseLite noise;
+    private static final int seed = new Random().nextInt(1,10000);
 
     /***
      * Generates noise
@@ -65,7 +53,7 @@ public class GenerationNoise {
         noise = new FastNoiseLite();
         noise.SetNoiseType(noiseType);
         noise.SetFrequency(frequency);
-        noise.SetSeed(new Random().nextInt(1,10000));
+        noise.SetSeed(seed);
         NOISE_TYPE_FUNCTION_MAP.put(noiseCategories, noise);
     }
 
